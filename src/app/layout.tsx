@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { SiteFooter, SiteHeader, WhatsAppFloat } from '@/components/site-shell';
+import { LanguageProvider } from '@/components/language';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://genesis-aluglass-kelly-3860.vercel.app'),
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /><WhatsAppFloat /></body></html>;
+  return <html lang="en"><body><LanguageProvider><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /><WhatsAppFloat /></LanguageProvider></body></html>;
 }
