@@ -1,6 +1,5 @@
 'use client';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-
 type Language = 'en' | 'zh';
 const LanguageContext = createContext<{language:Language;setLanguage:(language:Language)=>void}>({language:'en',setLanguage:()=>{}});
 const translations: Record<string,string> = {
@@ -77,26 +76,10 @@ const translations: Record<string,string> = {
   'Continue to WhatsApp':'继续前往 WhatsApp','Your information is used to prepare the WhatsApp enquiry. Nothing is sent until you press send in WhatsApp.':'您的资料仅用于准备 WhatsApp 咨询内容。只有您在 WhatsApp 按下发送后，讯息才会送出。',
   'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区'
 };
-
 export function LanguageProvider({children}:{children:ReactNode}){
  const [language,setLanguageState]=useState<Language>('en');
- useEffect(()=>{const saved=window.localStorage.getItem('genesis-language');if(saved==='zh')setLanguageState('zh');},[]);
+ useEffect(()=>{if(window.localStorage.getItem('genesis-language')==='zh')setLanguageState('zh');},[]);
  useEffect(()=>{
-  document.documentElement.lang=language==='zh'?'zh-CN':'en';
-  if(language==='en')return;
-  const originals=new WeakMap<Text,string>();
-  const translate=()=>{
-   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-   let node:Node|null;
-   while((node=walker.nextNode())){const t=node as Text;const original=originals.get(t)??t.nodeValue??'';if(!originals.has(t))originals.set(t,original);const key=original.trim();if(translations[key])t.nodeValue=original.replace(key,translations[key]);}
-   document.querySelectorAll<HTMLElement>('[placeholder],[aria-label],[alt],[title]').forEach(el=>{for(const attr of ['placeholder','aria-label','alt','title']){const value=el.getAttribute(attr);if(value&&translations[value])el.setAttribute(attr,translations[value]);}});
-  };
-  translate();const observer=new MutationObserver(translate);observer.observe(document.body,{childList:true,subtree:true,characterData:true});return()=>observer.disconnect();
- },[language]);
- const setLanguage=(next:Language)=>{window.localStorage.setItem('genesis-language',next);setLanguageState(next);};
- return <LanguageContext.Provider value={{language,setLanguage}}>{children}</LanguageContext.Provider>;
-}
-export function useLanguage(){return useContext(LanguageContext);} useEffect(()=>{
   document.documentElement.lang=language==='zh'?'zh-CN':'en';
   const reverse:Record<string,string>={};for(const [en,zh] of Object.entries(translations))if(!reverse[zh])reverse[zh]=en;
   const apply=()=>{
@@ -107,3 +90,7 @@ export function useLanguage(){return useContext(LanguageContext);} useEffect(()=
   };
   apply();const observer=new MutationObserver(apply);observer.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','alt','title']});return()=>observer.disconnect();
  },[language]);
+ const setLanguage=(next:Language)=>{window.localStorage.setItem('genesis-language',next);setLanguageState(next);};
+ return <LanguageContext.Provider value={{language,setLanguage}}>{children}</LanguageContext.Provider>;
+}
+export function useLanguage(){return useContext(LanguageContext);}
