@@ -26,7 +26,7 @@ const translations: Record<string,string> = {
   'A real installation featuring black aluminium frames and frosted glass panels. Explore this project and the range of solutions Genesis Aluglass can help bring to life.':'此真实安装案例采用黑色铝合金框架及磨砂玻璃面板。浏览此项目，了解 Genesis Aluglass 可为您实现的多种方案。',
   'View project gallery':'查看工程图库','04 — POSSIBILITIES':'04 — 更多可能','See what glass':'看看玻璃如何','can':'为您','open up.':'拓展空间。',
   'Architectural images are illustrative references, not completed Genesis projects. Your own project photographs will take centre stage as the portfolio grows.':'建筑图片仅作示意参考，并非 Genesis 已完成的工程。随着作品集不断丰富，我们将以实际项目照片为主。',
-  'ILLUSTRATIVE IMAGE':'示意图片','Commercial frontages':'商业玻璃门面','Glass partitions':'玻璃隔间',
+  'ILLUSTRATIVE IMAGE':'示意图片','Commercial frontages':'商业玻璃门面',
   'HAVE A PROJECT IN MIND?':'您有工程计划吗？','Let’s make your':'让我们让您的','space work better.':'空间发挥更大价值。','Talk to Genesis':'联系 Genesis',
   'Aluminium & glass':'铝材与玻璃','for every space.':'适用于各种空间。','Explore the range of services available for residential, retail and commercial projects.':'了解我们为住宅、零售及商业项目提供的各类服务。',
   'OUR SERVICES':'我们的服务','WHAT WE CAN HELP WITH':'我们可以提供的服务','Made around':'围绕','your project.':'您的项目打造。',
@@ -47,7 +47,7 @@ const translations: Record<string,string> = {
   'PROJECT GALLERY':'工程图库','ACTUAL WORK + VISUAL REFERENCES':'真实工程 + 视觉参考',
   'ACTUAL PROJECT PHOTO':'真实工程照片','GENESIS ALUGLASS / INSTALLATION 001':'GENESIS ALUGLASS / 安装案例 001',
   'Frosted glass':'磨砂玻璃','swing doors.':'平开门。','A supplied project photograph showing a pair of black aluminium framed frosted glass swing doors. This is presented as actual Genesis project photography.':'此项目照片展示一对黑色铝合金框架磨砂玻璃平开门，为 Genesis 真实工程照片。',
-  'TYPE':'类型','Door installation':'门安装','FRAME':'框架','Black aluminium':'黑色铝合金','GLAZING':'玻璃','Frosted glass':'磨砂玻璃',
+  'TYPE':'类型','Door installation':'门安装','FRAME':'框架','Black aluminium':'黑色铝合金','GLAZING':'玻璃',
   'Enquire about a similar solution':'咨询类似方案','Visualise the':'想象','possibilities.':'更多可能。',
   'The following AI-generated images are illustrative concepts only. They are not represented as Genesis Aluglass completed projects.':'以下 AI 生成图片仅为概念示意，并不代表 Genesis Aluglass 已完成的工程。',
   'AI-GENERATED VISUAL':'AI生成示意图','Residential glazing & sliding doors':'住宅玻璃与推拉门','Commercial glass frontage':'商业玻璃门面',
@@ -64,7 +64,7 @@ const translations: Record<string,string> = {
   'Consider the details':'关注细节','Explore suitable aluminium and glass applications.':'探索合适的铝材与玻璃应用。',
   'Move forward together':'携手推进','Discuss the scope and next steps for your project.':'讨论工程范围与下一步安排。',
   'LET’S START A CONVERSATION':'让我们开始交流','Tell us what you’re':'告诉我们您正在','working on.':'筹备什么项目。','Contact Genesis':'联系 Genesis',
-  'CONTACT / 04':'联系 / 04','Let’s talk about':'让我们谈谈','your project.':'您的项目。',
+  'CONTACT / 04':'联系 / 04','Let’s talk about':'让我们谈谈',
   'Tell us a little about what you need. Your enquiry will be prepared for you to continue directly on WhatsApp.':'请简单告诉我们您的需求。我们会为您准备咨询内容，方便您直接通过 WhatsApp 继续联系。',
   'PROJECT ENQUIRIES':'工程咨询','WHATSAPP FIRST':'优先使用 WHATSAPP','GET IN TOUCH':'联系我们',
   'Start with':'从一次','a conversation.':'交流开始。',
@@ -75,7 +75,7 @@ const translations: Record<string,string> = {
   'Service required':'所需服务','Not sure yet':'尚未确定','Project details':'工程详情',
   'Property type, location, approximate measurements or what you have in mind...':'物业类型、地点、大致尺寸或您的构想……',
   'Continue to WhatsApp':'继续前往 WhatsApp','Your information is used to prepare the WhatsApp enquiry. Nothing is sent until you press send in WhatsApp.':'您的资料仅用于准备 WhatsApp 咨询内容。只有您在 WhatsApp 按下发送后，讯息才会送出。',
-  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区',\n  'Aluminium windows & doors':'铝合金门窗','Glass works':'玻璃工程','Shopfronts':'商店玻璃门面','Glass partitions':'玻璃隔间','Shower screens':'淋浴屏','Glass railings':'玻璃栏杆','Glass awnings & canopies':'玻璃雨棚与顶篷','Folding & sliding doors':'折叠门与推拉门','Customised works':'定制工程',\n  'Spaces shaped':'塑造空间','by':'因','light & detail.':'光线与细节。','Good spaces are':'美好空间','built on the':'始于','details.':'细节。','Solutions for':'为各种空间提供','every space.':'合适的解决方案。','Made to fit.':'量身打造。','Made to last.':'经久耐用。','See what glass':'看看玻璃如何','can':'为您','open up.':'拓展空间。','Made around':'围绕','your project.':'您的项目打造。','Ideas made':'让构想','real.':'成为现实。','Visualise the':'想象','possibilities.':'更多可能。','Thoughtful work.':'用心做好每项工程。','Clear details.':'细节清晰到位。','Good outcomes begin':'理想成果始于','with':'充分','understanding.':'了解需求。','Let’s talk about':'让我们谈谈','your project.':'您的项目。','Start with':'从一次','a conversation.':'交流开始。','Have something':'您有','in mind?':'想法吗？','Let’s make your':'让我们让您的','space work better.':'空间发挥更大价值。','Let’s talk through':'让我们一起讨论','your requirements.':'您的需求。','Tell us what you’re':'告诉我们您正在','working on.':'筹备什么项目。','Commercial frontages':'商业玻璃门面','Residential glazing & sliding doors':'住宅玻璃与推拉门','Commercial glass frontage':'商业玻璃门面','Office glass partitions':'办公室玻璃隔间','Retail shopfront concept':'零售店面概念','Interior glass separation':'室内玻璃隔断'
+  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区',\n  'Aluminium windows & doors':'铝合金门窗',\n  'Spaces shaped':'塑造空间'
 };
 
 export function LanguageProvider({children}:{children:ReactNode}){
