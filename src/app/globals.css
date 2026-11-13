@@ -18,3 +18,28 @@
 .language-switch button:focus-visible{outline:2px solid var(--blue-deep);outline-offset:3px}
 @media(max-width:900px){.header-actions{margin-left:auto;gap:12px}.language-switch{gap:6px}}
 @media(max-width:600px){.header-actions{gap:8px}.language-switch{font-size:11px}.language-switch button{font-size:11px}.header-cta{padding:9px 10px}}
+
+
+/* Chinese typography refinement: keep CJK headlines balanced with the English display scale */
+html:lang(zh-CN) .home-hero h1,
+html:lang(zh-CN) .page-hero h1{font-size:clamp(48px,4.7vw,68px);letter-spacing:0;line-height:1.22;font-weight:600}
+html:lang(zh-CN) .section-pad h2,
+html:lang(zh-CN) .featured-copy h2,
+html:lang(zh-CN) .contact-info h2,
+html:lang(zh-CN) .project-feature-copy h2,
+html:lang(zh-CN) .about-story h2,
+html:lang(zh-CN) .blue-cta h2{font-size:clamp(38px,3.9vw,54px);letter-spacing:0;line-height:1.25}
+html:lang(zh-CN) .service-detail-copy h3,
+html:lang(zh-CN) .form-heading h3{font-size:22px;line-height:1.35;letter-spacing:0}
+html:lang(zh-CN) .visual-card>strong,
+html:lang(zh-CN) .project-tile h3{font-size:21px;letter-spacing:0;line-height:1.35}
+@media(max-width:600px){
+ html:lang(zh-CN) .home-hero h1,
+ html:lang(zh-CN) .page-hero h1{font-size:42px;letter-spacing:0;line-height:1.28}
+ html:lang(zh-CN) .section-pad h2,
+ html:lang(zh-CN) .featured-copy h2,
+ html:lang(zh-CN) .contact-info h2,
+ html:lang(zh-CN) .project-feature-copy h2,
+ html:lang(zh-CN) .about-story h2,
+ html:lang(zh-CN) .blue-cta h2{font-size:36px;letter-spacing:0;line-height:1.3}
+}
