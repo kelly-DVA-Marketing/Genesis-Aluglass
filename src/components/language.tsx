@@ -75,7 +75,7 @@ const translations: Record<string,string> = {
   'Service required':'所需服务','Not sure yet':'尚未确定','Project details':'工程详情',
   'Property type, location, approximate measurements or what you have in mind...':'物业类型、地点、大致尺寸或您的构想……',
   'Continue to WhatsApp':'继续前往 WhatsApp','Your information is used to prepare the WhatsApp enquiry. Nothing is sent until you press send in WhatsApp.':'您的资料仅用于准备 WhatsApp 咨询内容。只有您在 WhatsApp 按下发送后，讯息才会送出。',
-  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区'
+  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区',\n  'Aluminium windows & doors':'铝合金门窗','Glass works':'玻璃工程','Shopfronts':'商店玻璃门面','Glass partitions':'玻璃隔间','Shower screens':'淋浴屏','Glass railings':'玻璃栏杆','Glass awnings & canopies':'玻璃雨棚与顶篷','Folding & sliding doors':'折叠门与推拉门','Customised works':'定制工程',\n  'Spaces shaped':'塑造空间','by':'因','light & detail.':'光线与细节。','Good spaces are':'美好空间','built on the':'始于','details.':'细节。','Solutions for':'为各种空间提供','every space.':'合适的解决方案。','Made to fit.':'量身打造。','Made to last.':'经久耐用。','See what glass':'看看玻璃如何','can':'为您','open up.':'拓展空间。','Made around':'围绕','your project.':'您的项目打造。','Ideas made':'让构想','real.':'成为现实。','Visualise the':'想象','possibilities.':'更多可能。','Thoughtful work.':'用心做好每项工程。','Clear details.':'细节清晰到位。','Good outcomes begin':'理想成果始于','with':'充分','understanding.':'了解需求。','Let’s talk about':'让我们谈谈','your project.':'您的项目。','Start with':'从一次','a conversation.':'交流开始。','Have something':'您有','in mind?':'想法吗？','Let’s make your':'让我们让您的','space work better.':'空间发挥更大价值。','Let’s talk through':'让我们一起讨论','your requirements.':'您的需求。','Tell us what you’re':'告诉我们您正在','working on.':'筹备什么项目。','Commercial frontages':'商业玻璃门面','Residential glazing & sliding doors':'住宅玻璃与推拉门','Commercial glass frontage':'商业玻璃门面','Office glass partitions':'办公室玻璃隔间','Retail shopfront concept':'零售店面概念','Interior glass separation':'室内玻璃隔断'
 };
 
 export function LanguageProvider({children}:{children:ReactNode}){
@@ -96,4 +96,14 @@ export function LanguageProvider({children}:{children:ReactNode}){
  const setLanguage=(next:Language)=>{window.localStorage.setItem('genesis-language',next);setLanguageState(next);};
  return <LanguageContext.Provider value={{language,setLanguage}}>{children}</LanguageContext.Provider>;
 }
-export function useLanguage(){return useContext(LanguageContext);}
+export function useLanguage(){return useContext(LanguageContext);} useEffect(()=>{
+  document.documentElement.lang=language==='zh'?'zh-CN':'en';
+  const reverse:Record<string,string>={};for(const [en,zh] of Object.entries(translations))if(!reverse[zh])reverse[zh]=en;
+  const apply=()=>{
+   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+   let node:Node|null;
+   while((node=walker.nextNode())){const t=node as Text;const key=(t.nodeValue??'').trim();const replacement=language==='zh'?translations[key]:reverse[key];if(replacement)t.nodeValue=(t.nodeValue??'').replace(key,replacement);}
+   document.querySelectorAll<HTMLElement>('[placeholder],[aria-label],[alt],[title]').forEach(el=>{for(const attr of ['placeholder','aria-label','alt','title']){const value=el.getAttribute(attr);if(value){const replacement=language==='zh'?translations[value]:reverse[value];if(replacement)el.setAttribute(attr,replacement);}}});
+  };
+  apply();const observer=new MutationObserver(apply);observer.observe(document.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','alt','title']});return()=>observer.disconnect();
+ },[language]);
