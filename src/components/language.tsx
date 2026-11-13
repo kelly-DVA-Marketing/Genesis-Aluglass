@@ -75,7 +75,7 @@ const translations: Record<string,string> = {
   'Service required':'所需服务','Not sure yet':'尚未确定','Project details':'工程详情',
   'Property type, location, approximate measurements or what you have in mind...':'物业类型、地点、大致尺寸或您的构想……',
   'Continue to WhatsApp':'继续前往 WhatsApp','Your information is used to prepare the WhatsApp enquiry. Nothing is sent until you press send in WhatsApp.':'您的资料仅用于准备 WhatsApp 咨询内容。只有您在 WhatsApp 按下发送后，讯息才会送出。',
-  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区',\n  'Aluminium windows & doors':'铝合金门窗',\n  'Spaces shaped':'塑造空间'
+  'Chat on WhatsApp':'通过 WhatsApp 联系','All rights reserved.':'版权所有。','Serving Klang Valley & surrounding areas':'服务范围：巴生谷及周边地区'
 };
 
 export function LanguageProvider({children}:{children:ReactNode}){
